@@ -47,7 +47,11 @@ with open(PyBankdataFile, newline="") as csvfile:
             GainProfit = GainProfit + int(row[1])
         else:
             AverageChange = LostProfit + GainProfit
-            print('The Average Change: $',AverageChange)  
+            print('The Average Change: $',AverageChange)
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+with open('Results_PyBank', 'w') as text:
+    text.write("Total Months: + str(rowcount)\n")
         
 
 
