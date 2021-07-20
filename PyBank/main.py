@@ -16,10 +16,15 @@ with open(PyBankdataFile, newline="") as csvfile:
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csvreader)
     
-    #checking if this prints the Header of the CSV file.
+     #checking if this prints the Header of the CSV file.
     print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
+    rowcount = 0
     for row in csvreader:
+# count the numer or Months by reading the number of rows.
+        rowcount = rowcount + 1
+        print("Total Months:", rowcount)
+         
 
-        print(row)
+    
