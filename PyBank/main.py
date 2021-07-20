@@ -10,7 +10,9 @@ monthly_changes = []
 rowcount = 0
 TotalProfit = 0
 AverageProfit = 0
-
+AverageChange = 0
+LostProfit = 0
+GainProfit = 0
 
 #locating the file path of reading the csv data
 PyBankdataFile = os.path.join('Resources', 'budget_data.csv')
@@ -37,6 +39,20 @@ with open(PyBankdataFile, newline="") as csvfile:
         TotalProfit = TotalProfit + int(row[1])
         print('Total Profit is: $', TotalProfit)
     #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+        AverageProfit = TotalProfit / rowcount
+        print('Average Profit is $', AverageProfit)
+        if float(row[1]) <=0:
+            LostProfit = LostProfit + int (row[1])
+        elif float(row[1]) >0:
+            GainProfit = GainProfit + int(row[1])
+        else:
+            AverageChange = LostProfit + GainProfit
+            print('The Average Change: $',AverageChange)  
+        
+
+
+
+
   
 
 
