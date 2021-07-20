@@ -22,9 +22,13 @@ with open(PyBankdataFile, newline="") as csvfile:
     # Read each row of data after the header
     rowcount = 0
     for row in csvreader:
-# count the numer or Months by reading the number of rows.
+    # count the numer or Months by reading the number of rows.
         rowcount = rowcount + 1
         print("Total Months:", rowcount)
+    #The net total amount of "Profit/Losses" over the entire period
+    
+
+
          
 
     
