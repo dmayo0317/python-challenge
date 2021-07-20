@@ -4,6 +4,14 @@
 import os
 import csv
 
+# Creating Variable to hold the data
+profit = []
+monthly_changes = []
+rowcount = 0
+TotalProfit = 0
+AverageProfit = 0
+
+
 #locating the file path of reading the csv data
 PyBankdataFile = os.path.join('Resources', 'budget_data.csv')
 
@@ -19,14 +27,26 @@ with open(PyBankdataFile, newline="") as csvfile:
      #checking if this prints the Header of the CSV file.
     print(f"CSV Header: {csv_header}")
 
-    # Read each row of data after the header
-    rowcount = 0
+    # Create variables to help find the profit, number of rows
     for row in csvreader:
     # count the numer or Months by reading the number of rows.
-        rowcount = rowcount + 1
+        rowcount = rowcount +1
         print("Total Months:", rowcount)
-    #The net total amount of "Profit/Losses" over the entire period
-    
+     #The net total amount of "Profit/Losses" over the entire period
+        profit.append(row[1])
+        TotalProfit = TotalProfit + int(row[1])
+        print('Total Profit is: $', TotalProfit)
+    #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+  
+
+
+
+
+
+
+
+
+
 
 
          
