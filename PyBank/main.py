@@ -6,7 +6,7 @@ import csv
 
 # Creating Variable to hold the data
 profit = []
-monthly_changes = []
+#monthly_changes = []
 rowcount = 0
 TotalProfit = 0
 AverageProfit = 0
