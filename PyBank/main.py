@@ -59,7 +59,7 @@ with open('Results_PyBank', 'w') as text:
     text.write(f"Total Proft:$ {TotalProfit}\n")
     text.write(f"The Average Profit is $ {AverageProfit}\n")
     text.write(f"The Greatest Decrease in Profits was $ {LostProfit}\n")
-    text.write(f"The Greatest Increase in Profits was $ {GainProfit}")
+    text.write(f"The Greatest Increase in Profits was $ {GainProfit}\n")
 
         
 
