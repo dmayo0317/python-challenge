@@ -31,28 +31,36 @@ with open(PyBankdataFile, newline="") as csvfile:
 
     # Create variables to help find the profit, number of rows
     for row in csvreader:
+    
     # count the numer or Months by reading the number of rows.
         rowcount = rowcount +1
-        print("Total Months:", rowcount)
+     
      #The net total amount of "Profit/Losses" over the entire period
         profit.append(row[1])
         TotalProfit = TotalProfit + int(row[1])
-        print('Total Profit is: $', TotalProfit)
-    #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
-        AverageProfit = TotalProfit / rowcount
-        print('Average Profit is $', AverageProfit)
+    
+     #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
+        AverageProfit = TotalProfit / rowcount     
         if float(row[1]) <=0:
-            LostProfit = LostProfit + int (row[1])
+            LostProfit = LostProfit - int (row[1])
         elif float(row[1]) >0:
             GainProfit = GainProfit + int(row[1])
-        else:
-            AverageChange = LostProfit + GainProfit
-            print('The Average Change: $',AverageChange)
+
+        print("Total Months:", rowcount)
+        print("Total Profit:", int (TotalProfit))
+        print('Average Profit is $', int (AverageProfit))
+        print("Greatest Decrease in Profits was", float(LostProfit))
+        print("Greatest Increase in Profits was", float(GainProfit))
+  
 
 # Create a text file to wite to the file
 with open('Results_PyBank', 'w') as text:
-    text.write(f"Total Months:{rowcount}")
-    text.write(f"Total Months:{rowcount}")
+    text.write(f"Total Months: {rowcount}\n")
+    text.write(f"Total Proft:$ {TotalProfit}\n")
+    text.write(f"The Average Profit is $ {AverageProfit}\n")
+    text.write(f"The Greatest Decrease in Profits was $ {LostProfit}\n")
+    text.write(f"The Greatest Increase in Profits was $ {GainProfit}")
+
         
 
 
