@@ -6,11 +6,10 @@ import csv
 
 # Creating Variable to hold the data
 rowcount = 0
-TotalProfit = 0
-AverageProfit = 0
-AverageChange = 0
-LostProfit = 0
-GainProfit = 0
+CanList=[]
+winner = 0
+
+
 
 #locating the file path of reading the csv data
 PyPolldataFile = os.path.join('Resources', 'election_data.csv')
@@ -27,7 +26,19 @@ with open(PyPolldataFile, newline="") as csvfile:
      #checking if this prints the Header of the CSV file.
     print(f"CSV Header: {csv_header}")
 
-    # Create variables to help find the profit, number of rows
+#For loop to look through the Data file
     for row in csvreader:
+        #counts the number of votes
+        rowcount = rowcount +1
+        #Go into the Canditateslist
+        CanList.append(row[2])
 
-        break
+        print("Total Votes is", rowcount)
+
+with open('Results_PyPoll', 'w') as text:
+    text.write(f" Total Votes is: {rowcount}\n")
+
+#Notes to Grader, I did not get enought time to ask for help thus incomplete. 
+#I will request for a resubmission.
+       
+

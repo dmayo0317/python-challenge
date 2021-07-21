@@ -6,7 +6,6 @@ import csv
 
 # Creating Variable to hold the data
 profit = []
-#monthly_changes = []
 rowcount = 0
 TotalProfit = 0
 AverageProfit = 0
@@ -29,7 +28,7 @@ with open(PyBankdataFile, newline="") as csvfile:
      #checking if this prints the Header of the CSV file.
     print(f"CSV Header: {csv_header}")
 
-    # Create variables to help find the profit, number of rows
+    # Forloop to help find the profit, number of rows etc.
     for row in csvreader:
     
     # count the numer or Months by reading the number of rows.
